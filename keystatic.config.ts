@@ -2,7 +2,8 @@ import { config, fields, collection } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "local",
+    kind: "github",
+    repo: "benborgers/jumbocode-cheat-sheets",
   },
   collections: {
     docs: collection({
