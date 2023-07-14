@@ -22,6 +22,7 @@ export default config({
             publicPath: "/docs",
           },
         }),
+        published: fields.checkbox({ label: "Published" }),
       },
     }),
   },
