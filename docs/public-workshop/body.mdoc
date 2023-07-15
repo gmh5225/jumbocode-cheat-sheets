@@ -1,6 +1,6 @@
 ## Frontend vs. backend
 
-At a high level, apps are built from a few components:
+At a high level, web and mobile applications are built from a few components:
 
 - **Frontend:** The part of the app that you interact with, like text, images, buttons, forms, etc.
 - **Backend:** The part of the app that stores, organizes, and acts upon data.
@@ -9,11 +9,17 @@ The **database** is a piece of software that the backend uses to store data.
 
 ![](/docs/public-workshop/shapes.png)
 
-The frontend and backend are two separate apps, which run on *two separate computers:*
+The frontend and backend are two separate programs, which run on *two separate computers:*
 
-- The **frontend** runs on **each user’s device**
-- The **backend** runs on **centralized servers**
+- The **frontend** is a program that runs on **each user’s device**, creating a visual interface for the user to interact with and responding to actions (like a button being pressed, or text being typed).
+- The **backend** is a program runs on **centralized servers**, and responds to *requests* from your frontend program. For example, someone might submit a form on your frontend, which sends the data to the backend to have it saved in the database. Then, the backend, replies with new information for the frontend to display.
 
-{% callout emoji="❓" %}
-Helloooo
+{% callout %}
+**What’s a server?**
+
+The word *server* makes it sound big and fancy, but a server is just a computer. In fact, you could turn your old computer into a server.
+
+For web and mobile applications, the backend is an app that runs constantly on a server computer somewhere out there (managed by someone who you pay a couple bucks per month to rent some space on their computers). This app constantly awaits *requests* from your frontend app, as the frontend is running on your users’ devices.
+
+Generally, servers are kept in one place, so they can reliably stay connected to the internet. They might run a more basic operating system, like Linux, and have no screen or keyboard. But still, it’s just a computer.
 {% /callout %}
