@@ -1,4 +1,5 @@
-import { config, fields, collection } from "@keystatic/core";
+import React from "react";
+import { config, fields, collection, component } from "@keystatic/core";
 
 export default config({
   storage: {
@@ -20,6 +21,21 @@ export default config({
           images: {
             directory: "public/docs",
             publicPath: "/docs",
+          },
+          componentBlocks: {
+            callout: component({
+              label: "Callout",
+              preview: ({ fields }) =>
+                React.createElement("div", null, fields.content.element),
+              schema: {
+                content: fields.child({
+                  kind: "block",
+                  placeholder: "Write your callout...",
+                  formatting: "inherit",
+                  links: "inherit",
+                }),
+              },
+            }),
           },
         }),
         published: fields.checkbox({ label: "Published" }),
