@@ -29,3 +29,20 @@ Generally, servers are kept in one place, so they can reliably stay connected to
 - A user loads up your frontend program, and some computation occurs on the device in their hand to show a button on the screen.
 - The user presses the button, which triggers a *request* to your backend program, over the internet. Your backend is running on a server, and accepts this request. The backend knows what to do with this request: to tell the database to increase a counter number by 1, then to ask the database for the new count, and then to reply to the frontend’s *request*with this count.
 - The frontend receives the *response* to their *request*, and does some computation on the device to display this number to the user.
+
+## Choosing a tech stack
+
+To choose a tech stack, you generally start with choosing the three technologies: a **frontend** technology, a **backend** technology, and a **database**.
+
+Often times, these decisions are made based on what will fit the project best (some databases are better for some types of applications than others). But don’t get hung up on that — if you choose based on what sounds easy and maybe familiar, you’ll be fine.
+
+A simple stack to get started with:
+
+- [Next.js](https://nextjs.org) for the frontend (which uses [React](https://react.dev), a popular library for building frontends)
+- [Next.js](https://nextjs.org/docs/app/building-your-application/routing/router-handlers) for the backend (aha! Next.js actually includes a way to write backend code alongside your frontend; it’s not required but does make your life a little easier)
+- [MongoDB](https://www.mongodb.com) for the database
+
+Once you’ve built your project on your computer, you’ll need servers to run the backend and database on (not the frontend — that part *runs* on your users’ devices). A popular set of choices would be:
+
+- [Vercel](https://vercel.com) for hosting your frontend (they built and maintain Next.js, it’s a bit of a nepotistic relationship)
+- [Railway](https://railway.app) for hosting your MongoDB database
