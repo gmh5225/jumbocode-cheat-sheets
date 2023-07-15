@@ -1,6 +1,6 @@
 ## Frontend vs. backend
 
-At a high level, web and mobile applications are built from a few components:
+At a high level, web (and mobile) applications are built from a few components:
 
 - **Frontend:** The part of the app that you interact with, like text, images, buttons, forms, etc.
 - **Backend:** The part of the app that stores, organizes, and acts upon data.
@@ -19,7 +19,13 @@ The frontend and backend are two separate programs, which run on *two separate c
 
 The word *server* makes it sound big and fancy, but a server is just a computer. In fact, you could turn your old computer into a server.
 
-For web and mobile applications, the backend is an app that runs constantly on a server computer somewhere out there (managed by someone who you pay a couple bucks per month to rent some space on their computers). This app constantly awaits *requests* from your frontend app, as the frontend is running on your users’ devices.
+For web applications, the backend is an app that runs constantly on a server computer somewhere out there (managed by someone who you pay a couple bucks per month to rent some space on their computers). This app constantly awaits *requests* from your frontend app, as the frontend is running on your users’ devices.
 
 Generally, servers are kept in one place, so they can reliably stay connected to the internet. They might run a more basic operating system, like Linux, and have no screen or keyboard. But still, it’s just a computer.
 {% /callout %}
+
+### The Central Dogma (for web apps, at least)
+
+- A user loads up your frontend program, and some computation occurs on the device in their hand to show a button on the screen.
+- The user presses the button, which triggers a *request* to your backend program, over the internet. Your backend is running on a server, and accepts this request. The backend knows what to do with this request: to tell the database to increase a counter number by 1, then to ask the database for the new count, and then to reply to the frontend’s *request*with this count.
+- The frontend receives the *response* to their *request*, and does some computation on the device to display this number to the user.
