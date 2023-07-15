@@ -34,6 +34,12 @@ Generally, servers are kept in one place, so they can reliably stay connected to
 - The user presses the button, which triggers a *request* to your backend program, over the internet. Your backend is running on a server, and accepts this request. The backend knows what to do with this request: to tell the database to increase a counter number by 1, then to ask the database for the new count, and then to reply to the frontend’s *request* with this count.
 - The frontend receives the *response* to their *request*, and does some computation on the device to display this number to the user.
 
+{% comment %}
+Do an interactive demo where people open a popular web app and inspect the requests and responses when taking actions
+
+Find instructions for enabling dev tools in all the popular browsers (i.e. Safari doesn’t have it enabled by default)
+{% /comment %}
+
 ## Choosing a tech stack
 
 To choose a tech stack, you generally start with choosing the three technologies: a **frontend** technology, a **backend** technology, and a **database**.
