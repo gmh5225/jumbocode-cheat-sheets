@@ -30,8 +30,20 @@ export default config({
               schema: {
                 content: fields.child({
                   kind: "block",
-                  placeholder: "Write your callout...",
+                  placeholder: "...",
                   formatting: "inherit",
+                  links: "inherit",
+                }),
+              },
+            }),
+            comment: component({
+              label: "Internal Comment",
+              preview: ({ fields }) =>
+                React.createElement("div", null, fields.content.element),
+              schema: {
+                content: fields.child({
+                  placeholder: "...",
+                  kind: "block",
                   links: "inherit",
                 }),
               },
