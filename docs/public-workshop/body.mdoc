@@ -12,7 +12,7 @@ The **database** is a piece of software that the backend uses to store data.
 The frontend and backend are two separate programs, which run on *two separate computers:*
 
 - The **frontend** is a program that runs on **each user’s device**, creating a visual interface for the user to interact with and responding to actions (like a button being pressed, or text being typed).
-- The **backend** is a program runs on **centralized servers**, and responds to *requests* from your frontend program. For example, someone might submit a form on your frontend, which sends the data to the backend to have it saved in the database. Then, the backend, replies with new information for the frontend to display.
+- The **backend** is a program runs on **centralized servers**, and responds to *requests* from your frontend program. Each request can trigger some work to be performed on the server (like saving data that was sent to it), and the server has a chance to send a *response* with some data back to the frontend.
 
 {% callout %}
 **What’s a server?**
