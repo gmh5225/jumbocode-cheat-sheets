@@ -50,7 +50,6 @@ export default config({
             }),
           },
         }),
-        published: fields.checkbox({ label: "Published" }),
       },
     }),
   },
