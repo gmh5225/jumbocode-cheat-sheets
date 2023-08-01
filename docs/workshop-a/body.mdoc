@@ -28,9 +28,12 @@ To create your own branch, you need to start on the branch that you want to *bra
 
 To create your branch, switch you current branch in Git to `main` and then download ("pull") any new changes that might've been added to `main` since you last pulled changes. The "change branch" command is named, somewhat non-obviously, "checkout".
 
+Then, create your new branch with `git checkout` again — the `-b` flag tells Git "it's okay to make a new branch since this doesn't exist already". Name your branch something short, descriptive, and catchy. I like to prefix it with my name so I don't collide with other people's branch names.
+
 ```bash
 git checkout main # Changes branch to main
 git pull # Pulls down latest changes on main
+git checkout -b ben/add-login-page # Create your new branch off of main
 ```
 
 {% callout %}
@@ -104,9 +107,29 @@ You *push* your changes up to GitHub from your computer, and *pull* your teammat
 
 ### Testing your own changes
 
+Woah there — this is a *great* time to test your changes to make sure they work, before you open a pull request.
+
+Run the code and click through your changes to make sure everything's working as expected. Try some edge cases to see if they work too! (You will not believe how often I discover edge cases that aren't working even though I was *about* to have a team member review it.)
+
 ### Opening a PR on GitHub
 
+Now that your code is 100% totally absolutely working, it's time for someone else to review your code.
+
+Open up your team's repository of code on GitHub's website. Switch to your branch (1), click "Contribute" (2), and then "Open pull request" (3).
+
+![](/docs/workshop-a/2023-07-31%20at%2023.31.14@2x.png)
+
+{% callout %}
+If you've pushed lately then GitHub will give you a helpful yellow banner that only takes one-click to open a pull request, that's pretty nifty and does the same thing.
+{% /callout %}
+
+Fill out the description of your pull request with all the information someone else will need to review it: what the change does, maybe why you're doing it, and how they can test it on their computer.
+
+In the upper-right part of the pull request, you can tag people who are gonna review your code, which sends them an email asking them to do it. Most likely this will be your Tech Lead and/or Project Manager! Go ahead and create the pull request!
+
 ### Reviewing your own PR
+
+Once y
 
 ### Conducting a PR review (more commonly for Project Managers + Tech Leads)
 
