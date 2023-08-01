@@ -64,6 +64,24 @@ In practice, we almost always want to just stage everything, which we can do usi
 git add . # The period means "everythig within this folder and its subfolders"
 ```
 
+You can check which files you've staged using `git status`.
+
+Next, you create a commit! Again, commits are bundles of changes across all the files you've just *staged*. Commits require you to write a *message* that quickly describes what changes you made. You provide that message using the `-m` *flag*.
+
+```bash
+git commit -m "Make text inputs red when invalid"
+```
+
+Just like that, you've made a commit! You can run `git status` again to make sure.
+
+{% callout %}
+If you run `git commit` without the message all-in-one, you'll probably be dropped into the *Vim* text editor by default. It's kinda tricky to exit Vim, and people will make lots of jokes about this, ha ha!
+
+Anyway just type your message into the Vim text editor (you'll see it come up in the editor) and then hit `Escape` to take your cursor out of the editing mode, then type `:wq!` (you should see the letters coming up at the bottom of the editor; wq means "write (save) and then quit" and the exclamation mark means you mean it).
+
+Vim is hard to exit, ha ha! Ha ha! Never gets old! 😐
+{% /callout %}
+
 ### Pushing your changes
 
 ### Testing your own changes
