@@ -45,6 +45,25 @@ Once you've made some changes to your code, it's time to create a *commit*. With
 
 Think about them like save points in a video game, triggering whenever you make some progress. If your latest changes become overwhelming, you can revert to the previous code you committed (or any commit before that). But if your commits contain a huge number of changes, you won't have a very useful "save point" to revert to. (This metaphor is mediocre at best.)
 
+There's two steps to committing changes:
+
+1. Staging
+1. Committing
+
+You need to *stage* the files with changes that you want to commit, ready for the next commit. (Why do we have to do this? You could conceivably *stage* a few related files, commit, stage the rest of the files, and commit again — producing two commits containing different changes from different files.)
+
+To stage files, use `git add <filenames>`:
+
+```bash
+git add a.js b.js folder/c.js
+```
+
+In practice, we almost always want to just stage everything, which we can do using this command:
+
+```bash
+git add . # The period means "everythig within this folder and its subfolders"
+```
+
 ### Pushing your changes
 
 ### Testing your own changes
