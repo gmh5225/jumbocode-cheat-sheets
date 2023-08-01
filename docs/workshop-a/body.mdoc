@@ -22,6 +22,23 @@ Before that happens though, it's good practice to have someone who reviews your 
 
 ### Creating a branch
 
+A *branch* allows you to work on your own version of the code, without anyone working on top of you. The branch where the current "final" code lives is generally named `main`. This is the branch that gets put it for users to use, etc.
+
+To create your own branch, you need to start on the branch that you want to *branch off of.*Your new branch will be a copy of this branch at this moment in time. You almost always want to branch off of the latest code on `main` — not someone else's branch.
+
+To create your branch, switch you current branch in Git to `main` and then download ("pull") any new changes that might've been added to `main` since you last pulled changes. The "change branch" command is named, somewhat non-obviously, "checkout".
+
+```bash
+git checkout main # Changes branch to main
+git pull # Pulls down latest changes on main
+```
+
+{% callout %}
+When you `checkout`, Git will do its best to bring your "uncommitted" changes to the branch you switch to, so you can commit them there. If you don't want this, make sure to commit to your old branch before switching to `main`.
+
+If you don't know what committing a change is, don't worry — we'll cover it in a moment.
+{% /callout %}
+
 ### Committing to your branch
 
 ### Pushing your changes
