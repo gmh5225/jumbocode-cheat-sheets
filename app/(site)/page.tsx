@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { createReader } from "@keystatic/core/reader";
 import clsx from "clsx";
 import config from "../../keystatic.config";
-import { File, Folder } from "../../components/Icons";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 
 const reader = createReader(process.cwd(), config);
 
@@ -12,8 +12,6 @@ export default async function Home() {
   if (!doc) {
     notFound();
   }
-
-  const list = (await doc.body())[0];
 
   return (
     <div>
@@ -33,13 +31,14 @@ export default async function Home() {
 
       <div
         className={clsx(
-          "mt-12 py-4 px-6",
+          "mt-12 py-4",
           "max-w-screen-sm mx-auto",
-          "bg-white/30 border border-gray-200 shadow",
-          "font-body sm:text-lg"
+          "prose prose-stone max-w-none sm:prose-lg",
+          "font-body",
+          "prose-headings:font-headings"
         )}
       >
-        <Node node={list as NodeType} />
+        <DocumentRenderer document={await doc.body()} />
       </div>
 
       {/* Spacer at end of page */}
@@ -47,70 +46,3 @@ export default async function Home() {
     </div>
   );
 }
-
-type NodeType =
-  | {
-      type: "unordered-list" | "list-item" | "list-item-content";
-      children: NodeType[];
-    }
-  | {
-      type: "link";
-      href: string;
-      children: NodeType[];
-    }
-  | {
-      text: string;
-    };
-
-const Node = ({ node, level = -1 }: { node: NodeType; level?: number }) => {
-  if ("text" in node) {
-    if (!node.text) {
-      return null;
-    }
-
-    return <p>{node.text}</p>;
-  }
-
-  if (node.type === "link") {
-    return (
-      <a href={node.href}>
-        {node.children.map((child, i) => (
-          <Node key={i} node={child} level={level} />
-        ))}
-      </a>
-    );
-  }
-
-  if (node.type === "unordered-list") {
-    return (
-      <div className={clsx(level >= 0 && "ml-6")}>
-        {node.children.map((child, i) => (
-          <Node key={i} node={child} level={level} />
-        ))}
-      </div>
-    );
-  }
-
-  if (node.type === "list-item") {
-    return (
-      <div className="flex items-start gap-x-1.5 mt-2">
-        {node.children.length === 1 ? (
-          <File weight="bold" className="text-gray-400 mt-[0.3rem]" />
-        ) : (
-          <Folder weight="bold" className="text-gray-400 mt-[0.3rem]" />
-        )}
-        <div>
-          {node.children.map((child, i) => (
-            <Node key={i} node={child} level={level + 1} />
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  if (node.type === "list-item-content") {
-    return node.children.map((child, i) => (
-      <Node key={i} node={child} level={level} />
-    ));
-  }
-};
