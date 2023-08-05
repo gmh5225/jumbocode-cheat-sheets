@@ -47,7 +47,7 @@ export default function Help() {
                   <Image
                     src={ben}
                     alt=""
-                    height={65}
+                    width={65}
                     className="bg-white/10 rounded-full"
                   />
                   <div className="text-white font-body space-y-3">
