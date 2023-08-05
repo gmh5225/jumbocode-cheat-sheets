@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import clsx from "clsx";
 import Link from "next/link";
+import Help from "@/components/Help";
 
 export const metadata: Metadata = {
   title: "JumboCode Cheat Sheets",
@@ -40,8 +41,10 @@ const tasaOrbiter = localFont({
 });
 
 export default function RootLayout({
+  help,
   children,
 }: {
+  help: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
@@ -55,17 +58,7 @@ export default function RootLayout({
       >
         {children}
 
-        <Link
-          href="/help"
-          className="block bg-teal-700 px-3 py-2 w-max fixed right-2 bottom-2 shadow"
-        >
-          <div className="flex items-center gap-x-2">
-            <img src="https://emojicdn.elk.sh/👋" alt="" className="w-4" />
-            <p className="font-headings text-white font-semibold">
-              Have questions?
-            </p>
-          </div>
-        </Link>
+        <Help />
       </body>
     </html>
   );
