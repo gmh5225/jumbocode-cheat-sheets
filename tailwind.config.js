@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Helvetica Neue", "Helvetica"],
-        headings: ["Georgia"],
+        body: ["Helvetica Neue", "Helvetica", "sans-serif"],
+        headings: ["var(--font-tasa-orbiter)"],
       },
       colors: {
         gray: colors.stone,
