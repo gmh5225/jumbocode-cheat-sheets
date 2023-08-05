@@ -49,7 +49,7 @@ export default async function DocPage({
         >
           &larr;{"  "}JumboCode Cheat Sheets
         </Link>
-        <h1 className="mt-4 font-headings text-6xl text-gray-950 font-black text-center">
+        <h1 className="mt-4 font-headings text-5xl sm:text-6xl text-gray-950 font-black text-center">
           {doc.title}
         </h1>
       </div>

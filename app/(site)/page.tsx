@@ -24,14 +24,14 @@ export default async function Home() {
             Written for 2023–2024
           </p>
         </div>
-        <h1 className="mt-4 font-headings text-6xl text-gray-950 font-black text-center">
+        <h1 className="mt-4 font-headings text-5xl sm:text-6xl text-gray-950 font-black text-center">
           JumboCode Cheat Sheets
         </h1>
       </div>
 
       <div
         className={clsx(
-          "mt-12 py-4",
+          "mt-12 px-4",
           "max-w-screen-sm mx-auto",
           "prose prose-stone max-w-none sm:prose-lg",
           "font-body",
