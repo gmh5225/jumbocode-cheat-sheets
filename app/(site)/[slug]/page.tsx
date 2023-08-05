@@ -56,7 +56,7 @@ export default async function DocPage({
 
       <div
         className={clsx(
-          "px-4",
+          "mt-12 px-4",
           "max-w-screen-sm mx-auto",
           "prose prose-stone max-w-none",
           "font-body",
@@ -78,7 +78,7 @@ export default async function DocPage({
       </div>
 
       {/* Footer spacing */}
-      <div className="h-32" />
+      <div className="h-48" />
     </div>
   );
 }
