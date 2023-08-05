@@ -22,15 +22,21 @@ export default async function DocPage({
 
   return (
     <div>
-      <h1>{doc.title}</h1>
+      <h1 className="font-headings text-4xl sm:text-5xl text-gray-950 font-black">
+        {doc.title}
+      </h1>
+
+      <div className="mt-8 w-full h-px bg-gray-950/10 ml-12" />
+
       <div
         className={clsx(
-          "prose prose-stone max-w-none",
+          "mt-12",
+          "prose prose-stone sm:prose-lg max-w-none",
           "font-body",
           "prose-headings:font-headings",
           "before:prose-code:content-none after:prose-code:content-none",
-          "prose-code:bg-rose-100 prose-code:text-rose-700 prose-code:px-1.5 prose-code:rounded-md",
-          "[&_pre_code]:bg-red-500"
+          "prose-code:bg-gray-950/10 prose-code:text-gray-950 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md",
+          "[&_pre_code]:bg-transparent [&_pre_code]:p-0"
         )}
       >
         <DocumentRenderer document={await doc.body()} />
