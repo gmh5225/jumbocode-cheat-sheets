@@ -37,7 +37,7 @@ export default async function DocPage({
 
   return (
     <div>
-      <div className="py-32 border-b border-gray-950/5 bg-gray-950/[3%]">
+      <div className="py-32 px-4 border-b border-gray-950/5 bg-gray-950/[3%]">
         <Link
           href="/"
           className={clsx(
@@ -55,7 +55,7 @@ export default async function DocPage({
 
       <div
         className={clsx(
-          "mt-12",
+          "px-4",
           "max-w-screen-sm mx-auto",
           "prose prose-stone max-w-none",
           "font-body",
