@@ -5,6 +5,7 @@ import config from "../../../keystatic.config";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import clsx from "clsx";
 import Callout from "@/components/Callout";
+import Code from "@/components/Code";
 
 // We know all params to start, so all others can 404.
 export const dynamicParams = false;
@@ -55,6 +56,11 @@ export default async function DocPage({
       >
         <DocumentRenderer
           document={await doc.body()}
+          renderers={{
+            block: {
+              code: Code,
+            },
+          }}
           componentBlocks={{ comment: () => null, callout: Callout }}
         />
       </div>
