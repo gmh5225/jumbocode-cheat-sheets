@@ -78,11 +78,9 @@ git commit -m "Make text inputs red when invalid"
 Just like that, you've made a commit! You can run `git status` again to make sure.
 
 {% callout %}
-If you run `git commit` without the message all-in-one, you'll probably be dropped into the *Vim* text editor by default. It's kinda tricky to exit Vim, and people will make lots of jokes about this, ha ha!
+If you run `git commit` without the message all-in-one, you'll probably be dropped into the *Vim* text editor by default. It's kinda tricky to exit Vim.
 
 Anyway just type your message into the Vim text editor (you'll see it come up in the editor) and then hit `Escape` to take your cursor out of the editing mode, then type `:wq!` (you should see the letters coming up at the bottom of the editor; wq means "write (save) and then quit" and the exclamation mark means you mean it).
-
-Vim is hard to exit, ha ha! Ha ha! The joke never gets old! 😐
 {% /callout %}
 
 ### Pushing your changes
@@ -90,7 +88,7 @@ Vim is hard to exit, ha ha! Ha ha! The joke never gets old! 😐
 Now your changes are committed to Git, but recall that Git is on your computer and GitHub is how you have other people use the same files in their own computers' Git. (The code flows from your computer's Git → GitHub for synchronization and fancy features like Pull Requests → back down to each of your teammates' computers.)
 
 {% callout %}
-Believe it or not, Pull Requests are a feature made by GitHub (the company), not Git (the free and open source thing that's been around forever).
+Believe it or not, Pull Requests are a feature made by GitHub (the company), not Git (the free and open source project).
 
 Good idea GitHub!
 {% /callout %}
@@ -102,14 +100,14 @@ git push
 ```
 
 {% callout %}
-You *push* your changes up to GitHub from your computer, and *pull* your teammates' latest changes down from GitHub to your computer! That's quite cute, isn't it.
+You *push* your changes up to GitHub from your computer, and *pull* your teammates' latest changes down from GitHub to your computer!
 {% /callout %}
 
 ### Testing your own changes
 
-Woah there — this is a *great* time to test your changes to make sure they work, before you open a pull request.
+This is a great time to test your changes to make sure they work, before you open a pull request.
 
-Run the code and click through your changes to make sure everything's working as expected. Try some edge cases to see if they work too! (You will not believe how often I discover edge cases that aren't working even though I was *about* to have a team member review it.)
+Run the code and click through your changes to make sure everything's working as expected. See if you can think of any edge cases and just try those, too.
 
 ### Opening a PR on GitHub
 
@@ -137,7 +135,7 @@ Even after opening a pull request, additional commits to the same branch will up
 
 ### Conducting a PR review (more commonly for Project Managers + Tech Leads)
 
-You'll receive an email if you've been tagged as a reviewer. You can also bookmark this fun page that tells you all the pull requests that people are waiting for your review on: [https://github.com/pulls/review-requested](https://github.com/pulls/review-requested)
+You'll receive an email if you've been tagged as a reviewer. You can also bookmark this page that tells you all the pull requests that people are waiting for your review on: [https://github.com/pulls/review-requested](https://github.com/pulls/review-requested)
 
 To conduct your review:
 
