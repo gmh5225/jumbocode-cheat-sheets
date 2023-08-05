@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { createReader } from "@keystatic/core/reader";
 import config from "../../../keystatic.config";
 import { DocumentRenderer } from "@keystatic/core/renderer";
@@ -36,20 +37,31 @@ export default async function DocPage({
 
   return (
     <div>
-      <h1 className="font-headings text-4xl text-gray-950 font-black">
-        {doc.title}
-      </h1>
-
-      <div className="mt-8 w-full h-px bg-gray-950/10 ml-12" />
+      <div className="py-32 border-b border-gray-950/5 bg-gray-950/[3%]">
+        <Link
+          href="/"
+          className={clsx(
+            "block font-headings font-semibold text-center",
+            "text-lg text-teal-600 underline decoration-teal-600/50",
+            "whitespace-pre" // To preserve double space for nicer spacing.
+          )}
+        >
+          &larr;{"  "}JumboCode Cheat Sheets
+        </Link>
+        <h1 className="mt-4 font-headings text-6xl text-gray-950 font-black text-center">
+          {doc.title}
+        </h1>
+      </div>
 
       <div
         className={clsx(
-          "mt-8",
+          "mt-12",
+          "max-w-screen-sm mx-auto",
           "prose prose-stone max-w-none",
           "font-body",
           "prose-headings:font-headings",
           "before:prose-code:content-none after:prose-code:content-none",
-          "prose-code:bg-gray-950/10 prose-code:text-gray-950 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md",
+          "prose-code:bg-gray-950/[8%] prose-code:text-gray-950 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md",
           "[&_pre_code]:bg-transparent [&_pre_code]:p-0",
           "prose-pre:rounded-none"
         )}
@@ -57,13 +69,15 @@ export default async function DocPage({
         <DocumentRenderer
           document={await doc.body()}
           renderers={{
-            block: {
-              code: Code,
-            },
+            // @ts-ignore
+            block: { code: Code },
           }}
           componentBlocks={{ comment: () => null, callout: Callout }}
         />
       </div>
+
+      {/* Footer spacing */}
+      <div className="h-32" />
     </div>
   );
 }

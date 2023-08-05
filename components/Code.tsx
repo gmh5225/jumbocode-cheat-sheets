@@ -2,7 +2,7 @@ import React from "react";
 import shiki from "shiki";
 
 export default async function Code(props: {
-  language: string;
+  language: string | undefined;
   children: string;
 }) {
   const highlighter = await shiki.getHighlighter({ theme: "nord" });
