@@ -10,12 +10,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        body: ["Helvetica Neue", "Helvetica"],
+        headings: ["Georgia"],
       },
       colors: {
-        gray: colors.neutral,
+        gray: colors.stone,
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

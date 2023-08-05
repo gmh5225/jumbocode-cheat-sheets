@@ -1,13 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import clsx from "clsx";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: "JumboCode Cheat Sheets",
@@ -21,7 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={clsx(inter.variable, "font-sans antialiased text-gray-700")}
+        className={clsx(
+          "font-sans antialiased text-gray-700",
+          "max-w-screen-sm mx-auto p-4 pt-8 pb-24"
+        )}
       >
         {children}
       </body>
