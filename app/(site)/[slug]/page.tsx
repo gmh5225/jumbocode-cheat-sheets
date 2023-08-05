@@ -42,6 +42,7 @@ export default async function DocPage({
           href="/"
           className={clsx(
             "block font-headings font-semibold text-center",
+            "max-w-max mx-auto",
             "text-lg text-teal-600 underline decoration-teal-600/50",
             "whitespace-pre" // To preserve double space for nicer spacing.
           )}

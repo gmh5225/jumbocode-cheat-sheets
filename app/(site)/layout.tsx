@@ -53,7 +53,8 @@ export default function RootLayout({
         className={clsx(
           tasaOrbiter.variable,
           "bg-[hsl(60,18%,92%)]",
-          "font-sans antialiased text-gray-700"
+          "font-sans antialiased text-gray-700",
+          "min-h-screen" // Makes Help modal overlay the whole page height.
         )}
       >
         {children}
