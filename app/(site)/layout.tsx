@@ -50,7 +50,7 @@ export default function RootLayout({
           tasaOrbiter.variable,
           "bg-[hsl(60,18%,92%)]",
           "font-sans antialiased text-gray-700",
-          "max-w-screen-md mx-auto p-4 pt-8 pb-32"
+          "max-w-screen-sm mx-auto p-4 pt-8 pb-32"
         )}
       >
         {children}

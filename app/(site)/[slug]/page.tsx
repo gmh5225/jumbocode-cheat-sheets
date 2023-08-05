@@ -22,7 +22,7 @@ export default async function DocPage({
 
   return (
     <div>
-      <h1 className="font-headings text-4xl sm:text-5xl text-gray-950 font-black">
+      <h1 className="font-headings text-4xl text-gray-950 font-black">
         {doc.title}
       </h1>
 
@@ -30,8 +30,8 @@ export default async function DocPage({
 
       <div
         className={clsx(
-          "mt-12",
-          "prose prose-stone sm:prose-lg max-w-none",
+          "mt-8",
+          "prose prose-stone max-w-none",
           "font-body",
           "prose-headings:font-headings",
           "before:prose-code:content-none after:prose-code:content-none",
