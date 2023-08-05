@@ -77,7 +77,7 @@ export default async function DocPage({
         />
       </div>
 
-      {/* Footer spacing */}
+      {/* Spacer at end of page */}
       <div className="h-48" />
     </div>
   );
