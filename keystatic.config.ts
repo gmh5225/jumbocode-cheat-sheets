@@ -1,10 +1,28 @@
 import React from "react";
-import { config, fields, collection, component } from "@keystatic/core";
+import {
+  config,
+  fields,
+  singleton,
+  collection,
+  component,
+} from "@keystatic/core";
 
 export default config({
   storage: {
     kind: "github",
     repo: "benborgers/jumbocode-cheat-sheets",
+  },
+  singletons: {
+    home: singleton({
+      label: "Home",
+      schema: {
+        body: fields.document({
+          label: "Body",
+          formatting: true,
+          links: true,
+        }),
+      },
+    }),
   },
   collections: {
     docs: collection({
