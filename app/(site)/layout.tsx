@@ -22,7 +22,7 @@ const tasaOrbiter = localFont({
       style: "normal",
     },
     {
-      path: "../../fonts/tasa-orbiter/TASAOrbiterDisplay-Semibold.otf",
+      path: "../../fonts/tasa-orbiter/TASAOrbiterDisplay-SemiBold.otf",
       weight: "600",
       style: "normal",
     },
