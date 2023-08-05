@@ -48,7 +48,7 @@ export default function Help() {
                     src={ben}
                     alt=""
                     width={65}
-                    className="bg-white/10 rounded-full"
+                    className="bg-white/10 rounded-full w-[65px] h-[65px]"
                   />
                   <div className="text-white font-body space-y-3">
                     <p>
