@@ -1,0 +1,17 @@
+## Logging out
+
+If your credentials don't work anymore (maybe your token expired), you can have Git forget your username and password by running:
+
+```bash
+git config --global --unset credential.helper
+```
+
+## Remember me
+
+If get is asking for your username and password every time, run the following command:
+
+```bash
+git config --global credential.helper store
+```
+
+You'll need to enter your password once more after this, and then it should be saved from then on.
