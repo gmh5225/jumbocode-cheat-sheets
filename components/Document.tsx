@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link from "next/link";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import { DocumentElement } from "@keystatic/core";
 import Callout from "./Callout";
@@ -29,6 +30,15 @@ export default function Document({
         renderers={{
           // @ts-ignore
           block: { code: Code },
+          inline: {
+            link: (props) => {
+              if (props.href.startsWith("/")) {
+                return <Link {...props} />;
+              }
+
+              return <a {...props} target="_blank" />;
+            },
+          },
         }}
         componentBlocks={{ comment: () => null, callout: Callout }}
       />
