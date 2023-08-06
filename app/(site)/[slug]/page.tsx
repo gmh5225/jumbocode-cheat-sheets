@@ -3,10 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { createReader } from "@keystatic/core/reader";
 import config from "../../../keystatic.config";
-import { DocumentRenderer } from "@keystatic/core/renderer";
 import clsx from "clsx";
-import Callout from "@/components/Callout";
-import Code from "@/components/Code";
+import Document from "@/components/Document";
 
 // We know all params to start, so all others can 404.
 export const dynamicParams = false;
@@ -54,27 +52,8 @@ export default async function DocPage({
         </h1>
       </div>
 
-      <div
-        className={clsx(
-          "mt-12 px-4",
-          "max-w-screen-sm mx-auto",
-          "prose prose-stone max-w-none",
-          "font-body",
-          "prose-headings:font-headings",
-          "before:prose-code:content-none after:prose-code:content-none",
-          "prose-code:bg-gray-950/[8%] prose-code:text-gray-950 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md",
-          "[&_pre_code]:bg-transparent [&_pre_code]:p-0",
-          "prose-pre:rounded-none"
-        )}
-      >
-        <DocumentRenderer
-          document={await doc.body()}
-          renderers={{
-            // @ts-ignore
-            block: { code: Code },
-          }}
-          componentBlocks={{ comment: () => null, callout: Callout }}
-        />
+      <div className={clsx("mt-12 px-4", "max-w-screen-sm mx-auto")}>
+        <Document document={await doc.body()} />
       </div>
 
       {/* Spacer at end of page */}
