@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { createReader } from "@keystatic/core/reader";
 import clsx from "clsx";
 import config from "../../keystatic.config";
-import { DocumentRenderer } from "@keystatic/core/renderer";
+import Document from "@/components/Document";
 
 const reader = createReader(process.cwd(), config);
 
@@ -29,16 +29,8 @@ export default async function Home() {
         </h1>
       </div>
 
-      <div
-        className={clsx(
-          "mt-12 px-4",
-          "max-w-screen-sm mx-auto",
-          "prose prose-stone max-w-none sm:prose-lg",
-          "font-body",
-          "prose-headings:font-headings"
-        )}
-      >
-        <DocumentRenderer document={await doc.body()} />
+      <div className={clsx("mt-12 px-4", "max-w-screen-sm mx-auto")}>
+        <Document document={await doc.body()} className="sm:prose-lg" />
       </div>
 
       {/* Spacer at end of page */}
