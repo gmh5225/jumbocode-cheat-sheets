@@ -1,4 +1,16 @@
-## Logging out
+To log in to your GitHub account from your computer:
+
+1. Take an action that would require logging in (like `git clone` or `git pull`).
+1. Enter your username as your GitHub username. **However, your GitHub password will not work as the password.**
+1. On GitHub's website, go to [Settings > Developer Settings > Tokens (classic)](https://github.com/settings/tokens) and generate a new classic token. Name it something descriptive ("MacBook Air Git", etc), set the expiration date to be reasonably far in the future (maybe 90 days), and check the box next to "Repo". This token will be a randomly generated password with permission to access all the GitHub repositories that you can. **Enter this token as your "password" in the terminal.**
+
+## What do I do when my token expires?
+
+GitHub recommends that your tokens don't last forever, for increased security. This means that they'll inevitably stop working, and at some point you'll just be faced with "unauthorized" errors when trying to do things with Git.
+
+When this happens, "log out" of Git (instructions below), generate another token (instructions above), and log back in using that new token.
+
+## Logging out of Git on your computer
 
 If your credentials don't work anymore (maybe your token expired), you can have Git forget your username and password by running:
 
@@ -6,7 +18,7 @@ If your credentials don't work anymore (maybe your token expired), you can have 
 git config --global --unset credential.helper
 ```
 
-## Remember me
+## Having Git remember your credentials
 
 If get is asking for your username and password every time, run the following command:
 
